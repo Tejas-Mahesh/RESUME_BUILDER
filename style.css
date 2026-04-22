@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* FORM */
+.form {
+    width: 35%;
+    background: #1e293b;
+    padding: 20px;
+    color: white;
+}
+
+.form input, .form textarea, .form select {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* RESUME */
+.resume {
+    width: 65%;
+    background: #fff;
+    padding: 30px;
+    color: #000;
+    animation: fadeIn 0.5s ease;
+}
+
+.resume h1 {
+    color: #1e3a8a;
+}
+
+.section {
+    margin-top: 15px;
+}
+
+.section h3 {
+    background: #dbeafe;
+    padding: 5px;
+    color: #1e3a8a;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .form, .resume {
+        width: 100%;
+    }
+}
