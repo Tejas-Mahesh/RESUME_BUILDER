@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resume Builder</title>
+
 <link rel="stylesheet" href="style.css">
+
+<!-- PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
@@ -15,66 +19,65 @@
 <div class="form">
 <h2>Resume Builder</h2>
 
-<input id="name" placeholder="Full Name">
-<input id="role" placeholder="Role">
-<input id="email" placeholder="Email">
-<input id="phone" placeholder="Phone">
+<input id="f-name" placeholder="Full Name">
+<input id="f-role" placeholder="Role">
+<input id="f-email" placeholder="Email">
+<input id="f-phone" placeholder="Phone">
 
-<textarea id="profile" placeholder="Professional Profile"></textarea>
+<textarea id="f-profile" placeholder="Profile"></textarea>
+<textarea id="f-experience" placeholder="Experience"></textarea>
+<textarea id="f-education" placeholder="Education"></textarea>
 
-<textarea id="experience" placeholder="Work Experience"></textarea>
+<textarea id="f-projects" placeholder="Projects"></textarea>
+<textarea id="f-internship" placeholder="Internship"></textarea>
+<textarea id="f-skills" placeholder="Skills"></textarea>
+<textarea id="f-language" placeholder="Languages"></textarea>
+<textarea id="f-certification" placeholder="Certifications"></textarea>
 
-<textarea id="education" placeholder="Education Details"></textarea>
+<input id="f-dob" placeholder="DOB">
+<input id="f-gender" placeholder="Gender">
+<input id="f-nationality" placeholder="Nationality">
+<textarea id="f-address" placeholder="Address"></textarea>
 
-<textarea id="projects" placeholder="Technical Projects"></textarea>
-<textarea id="internship" placeholder="Internship Experience"></textarea>
-<textarea id="skills" placeholder="Technical Skills"></textarea>
-<textarea id="language" placeholder="Languages"></textarea>
-<textarea id="certification" placeholder="Certifications"></textarea>
-
-<input id="dob" placeholder="Date of Birth">
-<input id="gender" placeholder="Gender">
-<input id="nationality" placeholder="Nationality">
-<textarea id="address" placeholder="Address"></textarea>
-
+<button onclick="downloadPDF()">Download Resume</button>
 </div>
 
 <!-- PREVIEW -->
+<div class="preview-area">
 <div class="resume" id="resume">
 
-<h1 id="name">YOUR NAME</h1>
-<p id="role">Role</p>
-<p id="email">E-mail</p>
-<p id="phnoe">+91 </p>
+<h1 id="p-name">YOUR NAME</h1>
+<p id="p-role"></p>
+<p id="p-email"></p>
+<p id="p-phone"></p>
 
 <div class="section">
-<h3>PROFESSIONAL PROFILE</h3>
+<h3>PROFILE</h3>
 <p id="p-profile"></p>
 </div>
 
 <div class="section">
-<h3>WORK EXPERIENCE</h3>
+<h3>EXPERIENCE</h3>
 <p id="p-experience"></p>
 </div>
 
 <div class="section">
 <h3>EDUCATION</h3>
-<p id="p-educationType"></p>
 <p id="p-education"></p>
 </div>
 
 <div class="section">
-<h3>TECHNICAL PROJECTS</h3>
+<h3>PROJECTS</h3>
 <p id="p-projects"></p>
 </div>
 
 <div class="section">
-<h3>INTERNSHIP EXPERIENCE</h3>
+<h3>INTERNSHIP</h3>
 <p id="p-internship"></p>
 </div>
 
 <div class="section">
-<h3>TECHNICAL SKILLS</h3>
+<h3>SKILLS</h3>
 <p id="p-skills"></p>
 </div>
 
@@ -96,6 +99,7 @@
 <p>Address: <span id="p-address"></span></p>
 </div>
 
+</div>
 </div>
 
 </div>
