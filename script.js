@@ -1,47 +1,46 @@
 const fields = [
-"name","role","profile","experience","education",
+"name","role","email","phone","profile","experience","education",
 "projects","internship","skills","language",
 "certification","dob","gender","nationality","address"
 ];
 
-// INPUT UPDATE
 fields.forEach(id => {
-    document.getElementById(id).addEventListener("input", update);
+    document.getElementById("f-" + id).addEventListener("input", update);
 });
 
-// EDUCATION SELECT
-document.getElementById("educationType").addEventListener("change", function(){
-    document.getElementById("p-educationType").innerText = this.value;
-});
-
-// UPDATE FUNCTION
 function update() {
     fields.forEach(id => {
-        let value = document.getElementById(id).value;
+        let value = document.getElementById("f-" + id).value;
         document.getElementById("p-" + id).innerText = value;
-
         localStorage.setItem(id, value);
     });
 }
 
-// LOAD DATA
 window.onload = () => {
     fields.forEach(id => {
         let val = localStorage.getItem(id);
         if(val){
-            document.getElementById(id).value = val;
+            document.getElementById("f-" + id).value = val;
             document.getElementById("p-" + id).innerText = val;
         }
     });
-
-    let eduType = localStorage.getItem("educationType");
-    if(eduType){
-        document.getElementById("educationType").value = eduType;
-        document.getElementById("p-educationType").innerText = eduType;
-    }
 };
 
-// SAVE SELECT
-document.getElementById("educationType").addEventListener("change", function(){
-    localStorage.setItem("educationType", this.value);
-});
+function downloadPDF() {
+    const element = document.getElementById("resume");
+
+    html2pdf().set({
+        margin: 0,
+        filename: 'Resume.pdf',
+        html2canvas: {
+            scale: 2,
+            scrollY: 0   // 🔥 FIX FOR HALF PAGE ISSUE
+        },
+        jsPDF: {
+            unit: 'mm',
+            format: 'a4',
+            orientation: 'portrait'
+        },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    }).from(element).save();
+}
