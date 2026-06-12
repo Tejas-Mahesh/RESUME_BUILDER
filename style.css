@@ -93,8 +93,8 @@ body {
     }
 
     .resume {
-        width: 210mm;
-        min-height: 298mm;
+        width: 209mm;
+        min-height: 300mm;
         padding: 15mm;
         margin: 0;
     }
@@ -103,7 +103,7 @@ body {
 /* MOBILE */
 @media(max-width: 900px) {
     .container {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .form {
