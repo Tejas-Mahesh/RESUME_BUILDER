@@ -30,7 +30,7 @@ body {
 
 .form button {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-top: 10px;
     background: #2563eb;
     color: white;
@@ -93,8 +93,8 @@ body {
     }
 
     .resume {
-        width: 209mm;
-        min-height: 300mm;
+        width: 210mm;
+        min-height: 290mm;
         padding: 15mm;
         margin: 0;
     }
@@ -103,7 +103,7 @@ body {
 /* MOBILE */
 @media(max-width: 900px) {
     .container {
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .form {
